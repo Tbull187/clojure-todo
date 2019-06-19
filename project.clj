@@ -8,7 +8,8 @@
 
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [ring                "1.7.1"]
-                 [compojure           "1.3.4"]]
+                 [compojure           "1.3.4"]
+                 [hiccup              "1.0.5"]]
 
   :repl-options {:init-ns todo-list.core}
   

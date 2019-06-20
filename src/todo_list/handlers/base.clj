@@ -7,7 +7,8 @@
   "A ring handler to respond with a simple welcome message"
   [request]
   (html [:h1 "Hello, Clojure World!"]
-        [:p "Welcome to your first Clojure app. (Markup brought to you by hiccup 1.0.5)"]))
+        [:p "Welcome to your first Clojure app. (Markup brought to you by hiccup 1.0.5)"]
+        [:span "testing, testing... Beuler?"]))
 
 
 (defn goodbye

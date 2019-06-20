@@ -15,13 +15,14 @@
   (not-found "<p>Page not found!</p>"))
 
 (defn -main
-  "A very simple web server using Ring & Jetty"
+  "Simple web server using Ring & Jetty"
   [port-number]
   (jetty/run-jetty app
                    {:port (Integer. port-number)}))
 
 (defn -dev-main
-  "A very simple web server using Ring & Jetty that reloads code changes via the development profile of Leiningen"
+  "Simple web server using Ring & Jetty.
+  Reloads code changes via the development profile of Leiningen"
   [port-number]
   (jetty/run-jetty (wrap-reload #'app)
                    {:port (Integer. port-number)}))

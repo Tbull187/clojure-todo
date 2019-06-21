@@ -3,13 +3,24 @@
    [hiccup.core]
    [hiccup.page]))
 
+(defn onClicky
+  []
+  (println "click"))
+
 (defn welcome
   "A ring handler to respond with a simple welcome message"
   [request]
-  (html [:h1 "Hello, Clojure World!"]
-        [:p "Welcome to your first Clojure app. (Markup brought to you by hiccup 1.0.5)"]
-        [:span "testing, testing... Beuler?"]))
-
+  (html5 {:lang "en"} 
+         [:head (include-js "myscript.js") (include-css "mystyle.css")]
+         [:body
+          [:h1 "Hello, Clojure Todo!"]
+          [:p "Welcome to your first Clojure app. (Markup brought to you by hiccup 1.0.5)"]
+          [:h3 "Todo!"]
+          [:input {:type "text"}]
+          [:input {:type "button" :value "Add item to list" :onclick (onClicky)}]
+          [:ul {:id "todoList"}
+           [:li "I am a list elem"]]]
+         ))
 
 (defn goodbye
   "A song to wish you goodbye"
